@@ -17,7 +17,7 @@ def load_data():
     return df
 
 df = load_data()
-
+st.write("🧾 Colonnes disponibles :", list(df.columns))
 # ------------------------------------------------------------
 # 🎛️ Filtres interactifs
 # ------------------------------------------------------------

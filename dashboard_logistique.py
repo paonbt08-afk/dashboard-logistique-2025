@@ -12,8 +12,8 @@ import plotly.express as px
 @st.cache_data
 def load_data():
     df = pd.read_excel("base_logistique_2025.xlsx")
-    df['cout_t.km'] = df['COUT'] / (df['Qté_Facturée'] * df['KM'])
-    df['cout_tonne'] = df['COUT'] / df['Qté_Facturée']
+    df['cout_t.km'] = df['COUT'] / (df['Qté Facturée'] * df['KM'])
+    df['cout_tonne'] = df['COUT'] / df['Qté Facturée']
     return df
 
 df = load_data()

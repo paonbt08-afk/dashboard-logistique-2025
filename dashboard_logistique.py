@@ -63,6 +63,17 @@ col3.metric("Coût total (DZD)", f"{filtre['COUT'].sum():,.0f}")
 # ------------------------------------------------------------
 # 📉 Graphiques
 # ------------------------------------------------------------
+# ------------------------------------------------------------
+# 📉 Graphiques
+# ------------------------------------------------------------
 st.subheader("📈 Coût moyen par Wilaya (DZD/t.km)")
 if 'Wilaya' in filtre.columns:
-    kpi_wilaya = f_
+    kpi_wilaya = filtre.groupby('Wilaya', as_index=False)['cout_t.km'].mean()
+    fig1 = px.bar(
+        kpi_wilaya,
+        x='Wilaya',
+        y='cout_t.km',
+        color='cout_t.km',
+        title="Coût moyen par Wilaya (DZD/t.km)"
+    )
+    st.plotly_chart(fig1, use_container_width=True)

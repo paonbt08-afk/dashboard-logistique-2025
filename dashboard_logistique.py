@@ -25,10 +25,12 @@ st.sidebar.header("🔍 Filtres")
 sites = ["Tous"] + sorted(df['Site de chargement'].dropna().unique().tolist())
 transporteurs = ["Tous"] + sorted(df['Transporteur'].dropna().unique().tolist())
 periodes = ["Toutes"] + sorted(df['Période'].dropna().unique().tolist())
+types_transport = ["Tous"] + sorted(df['Type de transport'].dropna().unique().tolist())
 
 site_sel = st.sidebar.selectbox("🏭 Site de chargement", sites)
 trans_sel = st.sidebar.selectbox("🚛 Transporteur", transporteurs)
 periode_sel = st.sidebar.selectbox("📅 Période (mois)", periodes)
+type_sel = st.sidebar.selectbox("⚙️ Type de transport", types_transport)
 
 # Appliquer les filtres
 filtre = df.copy

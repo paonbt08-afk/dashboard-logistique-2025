@@ -22,7 +22,7 @@ st.write("🧾 Colonnes disponibles :", list(df.columns))
 # 🎛️ Filtres interactifs
 # ------------------------------------------------------------
 st.sidebar.header("🔍 Filtres")
-sites = ["Tous"] + sorted(df['Site_de_chargement'].dropna().unique().tolist())
+sites = ["Tous"] + sorted(df['Site de chargement'].dropna().unique().tolist())
 transporteurs = ["Tous"] + sorted(df['Transporteur'].dropna().unique().tolist())
 periodes = ["Toutes"] + sorted(df['Période'].dropna().unique().tolist())
 
